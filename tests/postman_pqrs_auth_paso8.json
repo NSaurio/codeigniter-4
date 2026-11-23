@@ -1,0 +1,32 @@
+﻿{
+  "info": {
+    "name": "PQRS System - Módulo de Seguridad JWT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin123\"\n}"
+        },
+        "url": "http://localhost:8080/api/auth/login"
+      }
+    },
+    {
+      "name": "GET Me (Perfil Protegido)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "http://localhost:8080/api/auth/me"
+      }
+    }
+  ]
+}
